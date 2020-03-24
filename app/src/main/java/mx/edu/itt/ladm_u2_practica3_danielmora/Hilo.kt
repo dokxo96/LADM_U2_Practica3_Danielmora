@@ -2,6 +2,7 @@ package mx.edu.itt.ladm_u2_practica3_danielmora
 
 import android.graphics.Color
 import android.os.AsyncTask
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 class Hilo (p:MainActivity):Thread(){
@@ -16,7 +17,7 @@ class Hilo (p:MainActivity):Thread(){
         super.run()
         iniciado = true
         while(iniciado){
-            sleep(1000)
+            sleep(3000)
 
             puntero.j1.setTextColor(Color.WHITE)
             puntero.j2.setTextColor(Color.WHITE)
@@ -151,11 +152,16 @@ class Hilo (p:MainActivity):Thread(){
 
     }
     fun TirarDados(){
+
+        sleep(1000)
+
         contdado1= Random.nextInt(1,6)
         puntero.dado1.setText(contdado1.toString())
 
         contdado2= Random.nextInt(1,6)
         puntero.dado2.setText(contdado2.toString())
+
+
     }
 
     fun estaIniciado(): Boolean {
